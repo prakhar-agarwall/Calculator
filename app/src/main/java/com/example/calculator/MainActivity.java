@@ -30,13 +30,17 @@ public class MainActivity extends AppCompatActivity {
     Button subtraction;
     TextView resultTextView;
 
+    double firstNumber = 0;
+    int secondNumberIndex = 0;
+    boolean status = false;
+    char operator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         setupID();
-
 
         View.OnClickListener calculator = new View.OnClickListener() {
             @Override
@@ -78,20 +82,92 @@ public class MainActivity extends AppCompatActivity {
                         resultTextView.append(".");
                         break;
                     case R.id.addition:
+                        status = true;
+                        operator = '+';
+                        String displayed1 = resultTextView.getText().toString();
+                        firstNumber = Double.parseDouble(displayed1);
+                        secondNumberIndex = displayed1.length() + 1;
                         resultTextView.append("+");
                         break;
                     case R.id.subtraction:
+                        status = true;
+                        operator = '-';
+                        String displayed2 = resultTextView.getText().toString();
+                        firstNumber = Double.parseDouble(displayed2);
+                        secondNumberIndex = displayed2.length() + 1;
                         resultTextView.append("-");
                         break;
                     case R.id.multiply:
+                        status = true;
+                        operator = '*';
+                        String displayed3 = resultTextView.getText().toString();
+                        firstNumber = Double.parseDouble(displayed3);
+                        secondNumberIndex = displayed3.length() + 1;
                         resultTextView.append("*");
                         break;
                     case R.id.division:
-                        resultTextView.append("/");
+                        status = true;
+                        operator = '÷';
+                        String displayed4 = resultTextView.getText().toString();
+                        firstNumber = Double.parseDouble(displayed4);
+                        secondNumberIndex = displayed4.length() + 1;
+                        resultTextView.append("÷");
                         break;
                     case R.id.modulo:
+                        status = true;
+                        operator = '%';
+                        String displayed5 = resultTextView.getText().toString();
+                        firstNumber = Double.parseDouble(displayed5);
+                        secondNumberIndex = displayed5.length() + 1;
                         resultTextView.append("%");
                         break;
+                    case R.id.clear:
+                        resultTextView.setText("");
+                        break;
+                    case R.id.back:
+                        String displayedInfo = resultTextView.getText().toString();
+                        int length = displayedInfo.length();
+                        if(length>0){
+                            displayedInfo = displayedInfo.substring(0,length-1);
+                            resultTextView.setText(displayedInfo);
+                        }
+                    case R.id.equal:
+                        if(status){
+                            if(operator == '+'){
+                                String displayedContent = resultTextView.getText().toString();
+                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+                                firstNumber += secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                            }
+                            else if(operator == '-'){
+                                String displayedContent = resultTextView.getText().toString();
+                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+                                firstNumber -= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                            }
+                            else if(operator == '*'){
+                                String displayedContent = resultTextView.getText().toString();
+                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+                                firstNumber *= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                            }
+                            else if(operator == '÷'){
+                                String displayedContent = resultTextView.getText().toString();
+                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+                                firstNumber /= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                            }
+                            else if(operator == '%'){
+                                String displayedContent = resultTextView.getText().toString();
+                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+                                firstNumber %= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                            }
+
+                        }
+
+
+
                 }
             }
         };
@@ -107,17 +183,19 @@ public class MainActivity extends AppCompatActivity {
         no8.setOnClickListener(calculator);
         no9.setOnClickListener(calculator);
         dot.setOnClickListener(calculator);
+        back.setOnClickListener(calculator);
+        equal.setOnClickListener(calculator);
+        clear.setOnClickListener(calculator);
+        modulus.setOnClickListener(calculator);
         addition.setOnClickListener(calculator);
-        subtraction.setOnClickListener(calculator);
         multiply.setOnClickListener(calculator);
         division.setOnClickListener(calculator);
-        modulus.setOnClickListener(calculator);
+        subtraction.setOnClickListener(calculator);
+
 
     }
 
-
-
-    private void setupID(){
+    private void setupID(){         //COMPLETED
         no0 = (Button) findViewById(R.id.no0);
         no1 = (Button) findViewById(R.id.no1);
         no2 = (Button) findViewById(R.id.no2);
@@ -138,5 +216,6 @@ public class MainActivity extends AppCompatActivity {
         addition = (Button) findViewById(R.id.addition);
         subtraction = (Button) findViewById(R.id.subtraction);
         resultTextView = (TextView) findViewById(R.id.resultTextView);
+
     }
 }
