@@ -28,7 +28,9 @@
         android:paddingTop="70dp"
         android:textAlignment="viewEnd"
         android:textColor="#ffffff"
-        android:textSize="55sp" />
+        android:textSize="55sp"
+        android:fontFamily="monospace"
+        android:paddingEnd="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

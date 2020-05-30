@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     int secondNumberIndex = 0;
     boolean status = false;
     char operator;
+    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,38 +50,111 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(id){
                     case R.id.no0:
-                        resultTextView.append("0");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("0");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("0");
+                            break;
+                        }
                     case R.id.no1:
-                        resultTextView.append("1");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("1");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("1");
+                            break;
+                        }
                     case R.id.no2:
-                        resultTextView.append("2");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("2");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("2");
+                            break;
+                        }
                     case R.id.no3:
-                        resultTextView.append("3");
-                        break;
-                    case R.id.no4:
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("3");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("3");
+                            break;
+                        }
+                    case R.id.no4:if(flag == 1){
+                        resultTextView.setText("");
                         resultTextView.append("4");
                         break;
-                    case R.id.no5:
+                    }
+                    else {
+                        resultTextView.append("4");
+                        break;
+                    }
+                    case R.id.no5:if(flag == 1){
+                        resultTextView.setText("");
                         resultTextView.append("5");
                         break;
-                    case R.id.no6:
+                    }
+                    else {
+                        resultTextView.append("5");
+                        break;
+                    }
+                    case R.id.no6:if(flag == 1){
+                        resultTextView.setText("");
                         resultTextView.append("6");
                         break;
-                    case R.id.no7:
+                    }
+                    else {
+                        resultTextView.append("6");
+                        break;
+                    }
+                    case R.id.no7:if(flag == 1){
+                        resultTextView.setText("");
                         resultTextView.append("7");
                         break;
+                    }
+                    else {
+                        resultTextView.append("7");
+                        break;
+                    }
                     case R.id.no8:
-                        resultTextView.append("8");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("8");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("8");
+                            break;
+                        }
                     case R.id.no9:
-                        resultTextView.append("9");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append("9");
+                            break;
+                        }
+                        else {
+                            resultTextView.append("9");
+                            break;
+                        }
                     case R.id.dot:
-                        resultTextView.append(".");
-                        break;
+                        if(flag == 1){
+                            resultTextView.setText("");
+                            resultTextView.append(".");
+                            break;
+                        }
+                        else {
+                            resultTextView.append(".");
+                            break;
+                        }
                     case R.id.addition:
                         status = true;
                         operator = '+';
@@ -131,40 +205,39 @@ public class MainActivity extends AppCompatActivity {
                             displayedInfo = displayedInfo.substring(0,length-1);
                             resultTextView.setText(displayedInfo);
                         }
+                        else{
+                            return;
+                        }
                     case R.id.equal:
-                        if(status){
+                        flag = 1;
+                        String displayedContent = resultTextView.getText().toString();
+                        double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
+
+                        if(status) {
                             if(operator == '+'){
-                                String displayedContent = resultTextView.getText().toString();
-                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
                                 firstNumber += secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                             }
                             else if(operator == '-'){
-                                String displayedContent = resultTextView.getText().toString();
-                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
                                 firstNumber -= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                             }
                             else if(operator == '*'){
-                                String displayedContent = resultTextView.getText().toString();
-                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
                                 firstNumber *= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                             }
                             else if(operator == '÷'){
-                                String displayedContent = resultTextView.getText().toString();
-                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
                                 firstNumber /= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                             }
                             else if(operator == '%'){
-                                String displayedContent = resultTextView.getText().toString();
-                                double secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,displayedContent.length()));
                                 firstNumber %= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                             }
-
                         }
+                        else{
+                            return;
+                    }
 
 
 
@@ -195,7 +268,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupID(){         //COMPLETED
+    private void setupID(){
+
         no0 = (Button) findViewById(R.id.no0);
         no1 = (Button) findViewById(R.id.no1);
         no2 = (Button) findViewById(R.id.no2);
