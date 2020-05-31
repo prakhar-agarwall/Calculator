@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -218,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.back:
                         String displayedInfo = resultTextView.getText().toString();
                         int length = displayedInfo.length();
-                        if(length>0){
+                        if(length>1){
                             displayedInfo = displayedInfo.substring(0,length-1);
                             resultTextView.setText(displayedInfo);
                         }
@@ -226,35 +227,41 @@ public class MainActivity extends AppCompatActivity {
                             return;
                         }
                     case R.id.equal:
-                        flag = 1;
+
                         String displayedContent = resultTextView.getText().toString();
                         int size = displayedContent.length();
                         secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,size));
 
                         if(status) {
+                            flag = 1;
                             if(operator == '+'){
                                 firstNumber += secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
+                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
                             else if(operator == '-'){
                                 firstNumber -= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
+                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
                             else if(operator == '*'){
                                 firstNumber *= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
+                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
                             else if(operator == '÷'){
                                 firstNumber /= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
+                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
                             else if(operator == '%'){
                                 firstNumber %= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
+                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
                         }
