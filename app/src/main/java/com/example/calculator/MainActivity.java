@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.addition:
                         status = true;
                         operator = '+';
+                        flag=0;
                         String displayed1 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed1);
                         resultTextView.append("+");
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.subtraction:
                         status = true;
                         operator = '-';
+                        flag=0;
                         String displayed2 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed2);
                         resultTextView.append("-");
@@ -191,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.multiply:
                         status = true;
                         operator = '*';
+                        flag=0;
                         String displayed3 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed3);
                         resultTextView.append("*");
@@ -199,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.division:
                         status = true;
                         operator = '÷';
+                        flag=0;
                         String displayed4 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed4);
                         resultTextView.append("÷");
@@ -207,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.modulo:
                         status = true;
                         operator = '%';
+                        flag=0;
                         String displayed5 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed5);
                         resultTextView.append("%");
@@ -222,6 +227,11 @@ public class MainActivity extends AppCompatActivity {
                         if(length>1){
                             displayedInfo = displayedInfo.substring(0,length-1);
                             resultTextView.setText(displayedInfo);
+                        }
+                        else if(length==1){
+                            resultTextView.setText("");
+                            initialize();
+                            break;
                         }
                         else{
                             return;
@@ -329,8 +339,6 @@ public class MainActivity extends AppCompatActivity {
         secondNumberIndex = 0;
         status = false;
         operator = ' ';
-        //flag = 0;
-        //resultTextView.setText("");
     }
 
 }
