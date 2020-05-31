@@ -3,12 +3,12 @@
     <string name="calculator">Calculator</string>
     <string name="ac">C</string>
     <string name="arrow">←</string>
-    <string name="percentage">%</string>
+    <string name="percentage">/</string>
     <string name="division">÷</string>
     <string name="_7">7</string>
     <string name="_8">8</string>
     <string name="_9">9</string>
-    <string name="multiply">*</string>
+    <string name="multiply">×</string>
     <string name="_4">4</string>
     <string name="_5">5</string>
     <string name="_6">6</string>

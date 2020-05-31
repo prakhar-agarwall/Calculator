@@ -101,44 +101,44 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("4");
                             flag=0;
                             break;
-                    }
-                    else {
-                        resultTextView.append("4");
-                        break;
-                    }
+                        }
+                        else {
+                            resultTextView.append("4");
+                            break;
+                        }
                     case R.id.no5:
                         if(flag == 1){
                             resultTextView.setText("");
                             resultTextView.append("5");
                             flag=0;
                             break;
-                    }
-                    else {
-                        resultTextView.append("5");
-                        break;
-                    }
+                        }
+                        else {
+                            resultTextView.append("5");
+                            break;
+                        }
                     case R.id.no6:
                         if(flag == 1){
                             resultTextView.setText("");
                             resultTextView.append("6");
                             flag=0;
                             break;
-                    }
-                    else {
-                        resultTextView.append("6");
-                        break;
-                    }
+                        }
+                        else {
+                            resultTextView.append("6");
+                            break;
+                        }
                     case R.id.no7:
                         if(flag == 1){
                             resultTextView.setText("");
                             resultTextView.append("7");
                             flag=0;
                             break;
-                    }
-                    else {
-                        resultTextView.append("7");
-                        break;
-                    }
+                        }
+                        else {
+                            resultTextView.append("7");
+                            break;
+                        }
                     case R.id.no8:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -192,11 +192,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.multiply:
                         status = true;
-                        operator = '*';
+                        operator = '×';
                         flag=0;
                         String displayed3 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed3);
-                        resultTextView.append("*");
+                        resultTextView.append("×");
                         secondNumberIndex = displayed3.length() + 1;
                         break;
                     case R.id.division:
@@ -210,11 +210,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.modulo:
                         status = true;
-                        operator = '%';
+                        operator = '/';
                         flag=0;
                         String displayed5 = resultTextView.getText().toString();
                         firstNumber = Double.parseDouble(displayed5);
-                        resultTextView.append("%");
+                        resultTextView.append("/");
                         secondNumberIndex = displayed5.length() + 1;
                         break;
                     case R.id.clear:
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
-                            else if(operator == '*'){
+                            else if(operator == '×'){
                                 firstNumber *= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
@@ -268,8 +268,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
                             }
-                            else if(operator == '%'){
-                                firstNumber %= secondNumber;
+                            else if(operator == '/'){
+                                firstNumber /= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                 initialize();
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else{
                             return;
-                    }
+                        }
 
 
 
