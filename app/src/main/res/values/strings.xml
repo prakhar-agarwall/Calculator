@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="calculator">Calculator</string>
-    <string name="ac">AC</string>
+    <string name="ac">C</string>
     <string name="arrow">←</string>
     <string name="percentage">%</string>
     <string name="division">÷</string>

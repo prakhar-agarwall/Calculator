@@ -35,44 +35,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#000000">
 
 
         <Button
             android:id="@+id/clear"
             android:fontFamily="monospace"
             android:layout_weight="1"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/ac"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/bgcolor"/>
 
         <Button
             android:id="@+id/back"
             android:fontFamily="monospace"
             android:layout_width="wrap_content"
+            android:layout_marginBottom="7dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="@string/arrow"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/bgcolor"/>
 
         <Button
             android:id="@+id/modulo"
             android:fontFamily="monospace"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:layout_marginBottom="7dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/percentage"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/bgcolor"/>
 
         <Button
             android:id="@+id/division"
@@ -80,11 +90,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginBottom="7dp"
             android:text="@string/division"
             android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#E1A067"
-            android:background="#2C2A2A"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/operations_layout"/>
 
 
     </LinearLayout>
@@ -92,20 +105,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#000000">
 
 
         <Button
             android:id="@+id/no7"
-            android:fontFamily="monospace"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
+            android:layout_marginBottom="7dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="monospace"
             android:text="@string/_7"
-            android:textStyle="bold"
-            android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/no8"
@@ -114,34 +131,43 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/_8"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/no9"
             android:fontFamily="monospace"
             android:layout_weight="1"
             android:layout_width="wrap_content"
+            android:layout_marginBottom="7dp"
             android:layout_height="match_parent"
             android:text="@string/_9"
             android:textStyle="bold"
             android:textSize="30sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/multiply"
             android:fontFamily="monospace"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginBottom="7dp"
             android:layout_weight="1"
             android:text="@string/multiply"
             android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#E1A067"
-            android:background="#2C2A2A"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/operations_layout"/>
 
 
     </LinearLayout>
@@ -149,30 +175,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#000000">
 
 
         <Button
             android:id="@+id/no4"
             android:fontFamily="monospace"
             android:layout_weight="1"
+            android:layout_marginBottom="7dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/_4"
             android:textStyle="bold"
             android:textSize="30sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/no5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginBottom="7dp"
             android:layout_weight="1"
-            android:background="#2C2A2A"
+            android:background="@drawable/rounded"
             android:fontFamily="monospace"
             android:text="@string/_5"
             android:textColor="#ffffff"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -182,23 +215,29 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginBottom="7dp"
             android:text="@string/_6"
             android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/subtraction"
-            android:fontFamily="monospace"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginBottom="7dp"
             android:layout_weight="1"
+            android:background="@drawable/operations_layout"
+            android:fontFamily="monospace"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="@string/subtract"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#E1A067"
-            android:background="#2C2A2A"/>
+            android:textColor="#ffffff"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -206,20 +245,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#000000">
 
 
         <Button
             android:id="@+id/no1"
             android:fontFamily="monospace"
             android:layout_weight="1"
+            android:layout_marginBottom="7dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/_1"
             android:textStyle="bold"
             android:textSize="30sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/no2"
@@ -231,7 +274,10 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/no3"
@@ -241,9 +287,12 @@
             android:layout_height="match_parent"
             android:text="@string/_3"
             android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textSize="30sp"
+            android:layout_marginBottom="7dp"
             android:textColor="#ffffff"
-            android:background="#2C2A2A"/>
+            android:background="@drawable/rounded"/>
 
         <Button
             android:id="@+id/addition"
@@ -251,11 +300,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
             android:text="@string/add"
             android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#E1A067"
-            android:background="#2C2A2A"/>
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/operations_layout"/>
 
 
     </LinearLayout>
@@ -265,15 +317,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#000000">
+
+        <Button
+            android:id="@+id/no0"
+            android:layout_width="193dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/rounded"
+            android:fontFamily="monospace"
+            android:paddingLeft="42dp"
+            android:text="@string/_0"
+            android:textAlignment="viewStart"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
 
         <Button
             android:id="@+id/dot"
+            android:layout_width="100dp"
+            android:layout_height="76dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/rounded"
             android:fontFamily="monospace"
-            android:layout_width="103dp"
-            android:layout_height="match_parent"
-            android:background="#2C2A2A"
             android:text="@string/dot"
             android:textColor="#ffffff"
             android:textSize="30sp"
@@ -281,25 +353,18 @@
 
 
         <Button
-            android:id="@+id/no0"
-            android:fontFamily="monospace"
-            android:layout_width="105dp"
-            android:layout_height="match_parent"
-            android:background="#2C2A2A"
-            android:text="@string/_0"
-            android:textColor="#ffffff"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <Button
             android:id="@+id/equal"
+            android:layout_width="wrap_content"
+            android:layout_height="82dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/operations_layout"
             android:fontFamily="monospace"
-            android:layout_width="203dp"
-            android:layout_height="match_parent"
-            android:background="#E49711"
             android:text="@string/equal"
             android:textColor="#ffffff"
-            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
     </LinearLayout>
