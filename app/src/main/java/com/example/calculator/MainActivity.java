@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("0");
                             break;
                         }
+
                     case R.id.no1:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("1");
                             break;
                         }
+
                     case R.id.no2:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("2");
                             break;
                         }
+
                     case R.id.no3:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("3");
                             break;
                         }
+
                     case R.id.no4:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("4");
                             break;
                         }
+
                     case R.id.no5:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -117,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("5");
                             break;
                         }
+
                     case R.id.no6:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -128,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("6");
                             break;
                         }
+
                     case R.id.no7:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -139,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("7");
                             break;
                         }
+
                     case R.id.no8:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -150,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("8");
                             break;
                         }
+
                     case R.id.no9:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -161,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append("9");
                             break;
                         }
+
                     case R.id.dot:
                         if(flag == 1){
                             resultTextView.setText("");
@@ -172,55 +182,92 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.append(".");
                             break;
                         }
+
                     case R.id.addition:
-                        status = true;
-                        operator = '+';
-                        flag=0;
                         String displayed1 = resultTextView.getText().toString();
-                        firstNumber = Double.parseDouble(displayed1);
-                        resultTextView.append("+");
-                        secondNumberIndex = displayed1.length() + 1;
-                        break;
+
+                        if(displayed1.equals("")){
+                            return;
+                        }
+                        else {
+                            status = true;
+                            operator = '+';
+                            flag = 0;
+                            firstNumber = Double.parseDouble(displayed1);
+                            resultTextView.append("+");
+                            secondNumberIndex = displayed1.length() + 1;
+                            break;
+                        }
+
                     case R.id.subtraction:
-                        status = true;
-                        operator = '-';
-                        flag=0;
                         String displayed2 = resultTextView.getText().toString();
-                        firstNumber = Double.parseDouble(displayed2);
-                        resultTextView.append("-");
-                        secondNumberIndex = displayed2.length() + 1;
-                        break;
+
+                        if(displayed2.equals("")){
+                            return;
+                        }
+                        else {
+                            status = true;
+                            operator = '+';
+                            flag = 0;
+                            firstNumber = Double.parseDouble(displayed2);
+                            resultTextView.append("-");
+                            secondNumberIndex = displayed2.length() + 1;
+                            break;
+                        }
+
                     case R.id.multiply:
-                        status = true;
-                        operator = '×';
-                        flag=0;
                         String displayed3 = resultTextView.getText().toString();
-                        firstNumber = Double.parseDouble(displayed3);
-                        resultTextView.append("×");
-                        secondNumberIndex = displayed3.length() + 1;
-                        break;
+
+                        if(displayed3.equals("")){
+                            return;
+                        }
+                        else {
+                            status = true;
+                            operator = '×';
+                            flag = 0;
+                            firstNumber = Double.parseDouble(displayed3);
+                            resultTextView.append("×");
+                            secondNumberIndex = displayed3.length() + 1;
+                            break;
+                        }
+
                     case R.id.division:
-                        status = true;
-                        operator = '÷';
-                        flag=0;
                         String displayed4 = resultTextView.getText().toString();
-                        firstNumber = Double.parseDouble(displayed4);
-                        resultTextView.append("÷");
-                        secondNumberIndex = displayed4.length() + 1;
-                        break;
+
+                        if(displayed4.equals("")){
+                            return;
+                        }
+                        else {
+                            status = true;
+                            operator = '÷';
+                            flag = 0;
+                            firstNumber = Double.parseDouble(displayed4);
+                            resultTextView.append("÷");
+                            secondNumberIndex = displayed4.length() + 1;
+                            break;
+                        }
+
                     case R.id.modulo:
-                        status = true;
-                        operator = '/';
-                        flag=0;
                         String displayed5 = resultTextView.getText().toString();
-                        firstNumber = Double.parseDouble(displayed5);
-                        resultTextView.append("/");
-                        secondNumberIndex = displayed5.length() + 1;
-                        break;
+
+                        if(displayed5.equals("")){
+                            return;
+                        }
+                        else {
+                            status = true;
+                            operator = '/';
+                            flag = 0;
+                            firstNumber = Double.parseDouble(displayed5);
+                            resultTextView.append("/");
+                            secondNumberIndex = displayed5.length() + 1;
+                            break;
+                        }
+
                     case R.id.clear:
                         resultTextView.setText("");
                         initialize();
                         break;
+
                     case R.id.back:
                         String displayedInfo = resultTextView.getText().toString();
                         int length = displayedInfo.length();
@@ -236,50 +283,51 @@ public class MainActivity extends AppCompatActivity {
                         else{
                             return;
                         }
+
                     case R.id.equal:
 
                         String displayedContent = resultTextView.getText().toString();
-                        int size = displayedContent.length();
-                        secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex,size));
 
-                        if(status) {
-                            flag = 1;
-                            if(operator == '+'){
-                                firstNumber += secondNumber;
-                                resultTextView.setText(String.valueOf(firstNumber));
-                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                initialize();
-                            }
-                            else if(operator == '-'){
-                                firstNumber -= secondNumber;
-                                resultTextView.setText(String.valueOf(firstNumber));
-                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                initialize();
-                            }
-                            else if(operator == '×'){
-                                firstNumber *= secondNumber;
-                                resultTextView.setText(String.valueOf(firstNumber));
-                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                initialize();
-                            }
-                            else if(operator == '÷'){
-                                firstNumber /= secondNumber;
-                                resultTextView.setText(String.valueOf(firstNumber));
-                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                initialize();
-                            }
-                            else if(operator == '/'){
-                                firstNumber /= secondNumber;
-                                resultTextView.setText(String.valueOf(firstNumber));
-                                Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                initialize();
-                            }
-                        }
-                        else{
+                        if(displayedContent.equals("")){
                             return;
                         }
+                        else {
+                            int size = displayedContent.length();
+                            secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex, size));
 
+                            if (status) {
+                                flag = 1;
+                                if (operator == '+') {
+                                    firstNumber += secondNumber;
+                                    resultTextView.setText(String.valueOf(firstNumber));
+                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
+                                    initialize();
+                                } else if (operator == '-') {
+                                    firstNumber -= secondNumber;
+                                    resultTextView.setText(String.valueOf(firstNumber));
+                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
+                                    initialize();
+                                } else if (operator == '×') {
+                                    firstNumber *= secondNumber;
+                                    resultTextView.setText(String.valueOf(firstNumber));
+                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
+                                    initialize();
+                                } else if (operator == '÷') {
+                                    firstNumber /= secondNumber;
+                                    resultTextView.setText(String.valueOf(firstNumber));
+                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
+                                    initialize();
+                                } else if (operator == '/') {
+                                    firstNumber /= secondNumber;
+                                    resultTextView.setText(String.valueOf(firstNumber));
+                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
+                                    initialize();
+                                }
+                            } else {
+                                return;
+                            }
 
+                        }
 
                 }
             }
