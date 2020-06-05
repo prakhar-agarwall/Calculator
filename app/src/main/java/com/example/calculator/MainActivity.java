@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
                             status = true;
-                            operator = '+';
+                            operator = '-';
                             flag = 0;
                             firstNumber = Double.parseDouble(displayed2);
                             resultTextView.append("-");
