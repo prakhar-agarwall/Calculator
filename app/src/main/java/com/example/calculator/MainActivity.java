@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,32 +12,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button no0;
-    Button no1;
-    Button no2;
-    Button no3;
-    Button no4;
-    Button no5;
-    Button no6;
-    Button no7;
-    Button no8;
-    Button no9;
-    Button dot;
-    Button back;
-    Button equal;
-    Button clear;
-    Button modulus;
-    Button division;
-    Button multiply;
-    Button addition;
-    Button subtraction;
+    Button no0,no1,no2,no3,no4,no5,no6,no7,no8,no9;
+    Button dot,back,equal,clear;
+    Button modulus,division,multiply,addition,subtraction;
     TextView resultTextView;
 
     double firstNumber=0,secondNumber=0;
     int secondNumberIndex=0;
     boolean status=false;
     char operator;
-    int flag=0;
+    int flag=0;     //If output is a number and user enters number, output is cleared to calculate the new case
 
 
     @Override
@@ -186,82 +171,250 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.addition:
                         String displayed1 = resultTextView.getText().toString();
 
-                        if(displayed1.equals("")){
+                        if(displayed1.equals("")){      //If operator is entered without any number
                             return;
                         }
-                        else {
-                            status = true;
-                            operator = '+';
                             flag = 0;
-                            firstNumber = Double.parseDouble(displayed1);
-                            resultTextView.append("+");
-                            secondNumberIndex = displayed1.length() + 1;
-                            break;
-                        }
+                            if(displayed1.contains("+")){
+                                operator=' ';
+                                int size1 = displayed1.length();
+                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                firstNumber+= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                                displayed1 = resultTextView.getText().toString();
+                            }
+                            else if(displayed1.contains("-")){
+                                operator=' ';
+                                int size1 = displayed1.length();
+                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                firstNumber-= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                                displayed1 = resultTextView.getText().toString();
+                            }
+                            else if(displayed1.contains("×")){
+                                operator=' ';
+                                int size1 = displayed1.length();
+                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                firstNumber*= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                                displayed1 = resultTextView.getText().toString();
+                            }
+                            else if(displayed1.contains("÷")){
+                            operator=' ';
+                            int size1 = displayed1.length();
+                            secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                            firstNumber/= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed1 = resultTextView.getText().toString();
+                            }
+                            else {
+                                status = true;
+                                firstNumber = Double.parseDouble(displayed1);
+
+                            }
+                        operator = '+';
+                        resultTextView.append("+");
+                        secondNumberIndex = displayed1.length() + 1;
+                        break;
+
 
                     case R.id.subtraction:
                         String displayed2 = resultTextView.getText().toString();
 
-                        if(displayed2.equals("")){
+                        if(displayed2.equals("")){      //If operator is entered without any number
                             return;
                         }
+                        flag = 0;
+                        if(displayed2.contains("+")){
+                            operator=' ';
+                            int size2 = displayed2.length();
+                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            firstNumber+= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed2 = resultTextView.getText().toString();
+                        }
+                        else if(displayed2.contains("-")){
+                            operator=' ';
+                            int size2 = displayed2.length();
+                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            firstNumber-= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed2 = resultTextView.getText().toString();
+                        }
+                        else if(displayed2.contains("×")){
+                            operator=' ';
+                            int size2 = displayed2.length();
+                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            firstNumber*= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed2 = resultTextView.getText().toString();
+                        }
+                        else if(displayed2.contains("÷")){
+                        operator=' ';
+                        int size2 = displayed2.length();
+                        secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                        firstNumber/= secondNumber;
+                        resultTextView.setText(String.valueOf(firstNumber));
+                        displayed2 = resultTextView.getText().toString();
+                    }
                         else {
                             status = true;
-                            operator = '-';
-                            flag = 0;
                             firstNumber = Double.parseDouble(displayed2);
-                            resultTextView.append("-");
-                            secondNumberIndex = displayed2.length() + 1;
-                            break;
+
                         }
+                        operator = '-';
+                        resultTextView.append("-");
+                        secondNumberIndex = displayed2.length() + 1;
+                        break;
 
                     case R.id.multiply:
                         String displayed3 = resultTextView.getText().toString();
 
-                        if(displayed3.equals("")){
+                        if(displayed3.equals("")){      //If operator is entered without any number
                             return;
+                        }
+                        flag = 0;
+                        if(displayed3.contains("+")){
+                            operator=' ';
+                            int size3 = displayed3.length();
+                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            firstNumber+= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed3 = resultTextView.getText().toString();
+                        }
+                        else if(displayed3.contains("-")){
+                            operator=' ';
+                            int size3 = displayed3.length();
+                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            firstNumber-= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed3 = resultTextView.getText().toString();
+                        }
+                        else if(displayed3.contains("×")){
+                            operator=' ';
+                            int size3 = displayed3.length();
+                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            firstNumber*= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed3 = resultTextView.getText().toString();
+                        }
+                        else if(displayed3.contains("÷")){
+                            operator=' ';
+                            int size3 = displayed3.length();
+                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            firstNumber/= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed3 = resultTextView.getText().toString();
                         }
                         else {
                             status = true;
-                            operator = '×';
-                            flag = 0;
                             firstNumber = Double.parseDouble(displayed3);
-                            resultTextView.append("×");
-                            secondNumberIndex = displayed3.length() + 1;
-                            break;
+
                         }
+                        operator = '×';
+                        resultTextView.append("×");
+                        secondNumberIndex = displayed3.length() + 1;
+                        break;
+
 
                     case R.id.division:
                         String displayed4 = resultTextView.getText().toString();
 
-                        if(displayed4.equals("")){
+                        if(displayed4.equals("")){      //If operator is entered without any number
                             return;
+                        }
+                        flag = 0;
+                        if(displayed4.contains("+")){
+                            operator=' ';
+                            int size4 = displayed4.length();
+                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            firstNumber+= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed4 = resultTextView.getText().toString();
+                        }
+                        else if(displayed4.contains("-")){
+                            operator=' ';
+                            int size4 = displayed4.length();
+                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            firstNumber-= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed4 = resultTextView.getText().toString();
+                        }
+                        else if(displayed4.contains("×")){
+                            operator=' ';
+                            int size4 = displayed4.length();
+                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            firstNumber*= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed4 = resultTextView.getText().toString();
+                        }
+                        else if(displayed4.contains("÷")){
+                            operator=' ';
+                            int size4 = displayed4.length();
+                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            firstNumber/= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed4 = resultTextView.getText().toString();
                         }
                         else {
                             status = true;
-                            operator = '÷';
-                            flag = 0;
                             firstNumber = Double.parseDouble(displayed4);
-                            resultTextView.append("÷");
-                            secondNumberIndex = displayed4.length() + 1;
-                            break;
+
                         }
+                        operator = '÷';
+                        resultTextView.append("÷");
+                        secondNumberIndex = displayed4.length() + 1;
+                        break;
+
 
                     case R.id.modulo:
                         String displayed5 = resultTextView.getText().toString();
 
-                        if(displayed5.equals("")){
+                        if(displayed5.equals("")){      //If operator is entered without any number
                             return;
+                        }
+                        flag = 0;
+                        if(displayed5.contains("+")){
+                            operator=' ';
+                            int size5 = displayed5.length();
+                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            firstNumber+= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed5 = resultTextView.getText().toString();
+                        }
+                        else if(displayed5.contains("-")){
+                            operator=' ';
+                            int size5 = displayed5.length();
+                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            firstNumber-= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed5 = resultTextView.getText().toString();
+                        }
+                        else if(displayed5.contains("×")){
+                            operator=' ';
+                            int size5 = displayed5.length();
+                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            firstNumber*= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed5 = resultTextView.getText().toString();
+                        }
+                        else if(displayed5.contains("÷")){
+                            operator=' ';
+                            int size5 = displayed5.length();
+                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            firstNumber/= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed5 = resultTextView.getText().toString();
                         }
                         else {
                             status = true;
-                            operator = '/';
-                            flag = 0;
                             firstNumber = Double.parseDouble(displayed5);
-                            resultTextView.append("/");
-                            secondNumberIndex = displayed5.length() + 1;
-                            break;
+
                         }
+                        operator = '/';
+                        resultTextView.append("/");
+                        secondNumberIndex = displayed5.length() + 1;
+                        break;
 
                     case R.id.clear:
                         resultTextView.setText("");
@@ -288,7 +441,7 @@ public class MainActivity extends AppCompatActivity {
 
                         String displayedContent = resultTextView.getText().toString();
 
-                        if(displayedContent.equals("")){
+                        if(displayedContent.equals("")){        //If operator is entered without any number
                             return;
                         }
                         else {
@@ -326,9 +479,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 return;
                             }
-
                         }
-
                 }
             }
         };
