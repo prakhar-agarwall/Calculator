@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -178,7 +179,11 @@ public class MainActivity extends AppCompatActivity {
                             if(displayed1.contains("+")){
                                 operator=' ';
                                 int size1 = displayed1.length();
-                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                try {
+                                    secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                }
+                                catch (Exception ignored){
+                                }
                                 firstNumber+= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 displayed1 = resultTextView.getText().toString();
@@ -186,7 +191,11 @@ public class MainActivity extends AppCompatActivity {
                             else if(displayed1.contains("-")){
                                 operator=' ';
                                 int size1 = displayed1.length();
-                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                try {
+                                    secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                }
+                                catch (Exception ignored){
+                                }
                                 firstNumber-= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 displayed1 = resultTextView.getText().toString();
@@ -194,18 +203,26 @@ public class MainActivity extends AppCompatActivity {
                             else if(displayed1.contains("×")){
                                 operator=' ';
                                 int size1 = displayed1.length();
-                                secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                try {
+                                    secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                }
+                                catch (Exception ignored){
+                                }
                                 firstNumber*= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 displayed1 = resultTextView.getText().toString();
                             }
                             else if(displayed1.contains("÷")){
-                            operator=' ';
-                            int size1 = displayed1.length();
-                            secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
-                            firstNumber/= secondNumber;
-                            resultTextView.setText(String.valueOf(firstNumber));
-                            displayed1 = resultTextView.getText().toString();
+                                operator=' ';
+                                int size1 = displayed1.length();
+                                try {
+                                    secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
+                                }
+                                catch (Exception ignored){
+                                }
+                                firstNumber/= secondNumber;
+                                resultTextView.setText(String.valueOf(firstNumber));
+                                displayed1 = resultTextView.getText().toString();
                             }
                             else {
                                 status = true;
@@ -228,7 +245,11 @@ public class MainActivity extends AppCompatActivity {
                         if(displayed2.contains("+")){
                             operator=' ';
                             int size2 = displayed2.length();
-                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            try {
+                                secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber+= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed2 = resultTextView.getText().toString();
@@ -236,7 +257,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed2.contains("-")){
                             operator=' ';
                             int size2 = displayed2.length();
-                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            try {
+                                secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed2 = resultTextView.getText().toString();
@@ -244,18 +269,26 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed2.contains("×")){
                             operator=' ';
                             int size2 = displayed2.length();
-                            secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            try {
+                                secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed2 = resultTextView.getText().toString();
                         }
                         else if(displayed2.contains("÷")){
-                        operator=' ';
-                        int size2 = displayed2.length();
-                        secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
-                        firstNumber/= secondNumber;
-                        resultTextView.setText(String.valueOf(firstNumber));
-                        displayed2 = resultTextView.getText().toString();
+                            operator=' ';
+                            int size2 = displayed2.length();
+                            try {
+                                secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
+                            }
+                            catch (Exception ignored){
+                            }
+                            firstNumber/= secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
+                            displayed2 = resultTextView.getText().toString();
                     }
                         else {
                             status = true;
@@ -277,7 +310,11 @@ public class MainActivity extends AppCompatActivity {
                         if(displayed3.contains("+")){
                             operator=' ';
                             int size3 = displayed3.length();
-                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            try {
+                                secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber+= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed3 = resultTextView.getText().toString();
@@ -285,7 +322,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed3.contains("-")){
                             operator=' ';
                             int size3 = displayed3.length();
-                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            try {
+                                secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed3 = resultTextView.getText().toString();
@@ -293,7 +334,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed3.contains("×")){
                             operator=' ';
                             int size3 = displayed3.length();
-                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            try {
+                                secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed3 = resultTextView.getText().toString();
@@ -301,7 +346,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed3.contains("÷")){
                             operator=' ';
                             int size3 = displayed3.length();
-                            secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            try {
+                                secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed3 = resultTextView.getText().toString();
@@ -327,7 +376,11 @@ public class MainActivity extends AppCompatActivity {
                         if(displayed4.contains("+")){
                             operator=' ';
                             int size4 = displayed4.length();
-                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            try {
+                                secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber+= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed4 = resultTextView.getText().toString();
@@ -335,7 +388,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed4.contains("-")){
                             operator=' ';
                             int size4 = displayed4.length();
-                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            try {
+                                secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed4 = resultTextView.getText().toString();
@@ -343,7 +400,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed4.contains("×")){
                             operator=' ';
                             int size4 = displayed4.length();
-                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            try {
+                                secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed4 = resultTextView.getText().toString();
@@ -351,7 +412,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed4.contains("÷")){
                             operator=' ';
                             int size4 = displayed4.length();
-                            secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            try {
+                                secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed4 = resultTextView.getText().toString();
@@ -368,6 +433,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     case R.id.modulo:
+
                         String displayed5 = resultTextView.getText().toString();
 
                         if(displayed5.equals("")){      //If operator is entered without any number
@@ -377,15 +443,24 @@ public class MainActivity extends AppCompatActivity {
                         if(displayed5.contains("+")){
                             operator=' ';
                             int size5 = displayed5.length();
-                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            try {
+                                secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber+= secondNumber;
-                            resultTextView.setText(String.valueOf(firstNumber));
+                            secondNumber=100;
+                            resultTextView.setText(String.valueOf(firstNumber/secondNumber));
                             displayed5 = resultTextView.getText().toString();
                         }
                         else if(displayed5.contains("-")){
                             operator=' ';
                             int size5 = displayed5.length();
-                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            try {
+                                secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed5 = resultTextView.getText().toString();
@@ -393,7 +468,11 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed5.contains("×")){
                             operator=' ';
                             int size5 = displayed5.length();
-                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            try {
+                                secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed5 = resultTextView.getText().toString();
@@ -401,20 +480,26 @@ public class MainActivity extends AppCompatActivity {
                         else if(displayed5.contains("÷")){
                             operator=' ';
                             int size5 = displayed5.length();
-                            secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            try {
+                                secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
+                            }
+                            catch (Exception ignored){
+                            }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
                             displayed5 = resultTextView.getText().toString();
                         }
                         else {
                             status = true;
+                            secondNumber=100;
                             firstNumber = Double.parseDouble(displayed5);
-
+                            firstNumber/=secondNumber;
+                            resultTextView.setText(String.valueOf(firstNumber));
                         }
-                        operator = '/';
-                        resultTextView.append("/");
+                        operator = '%';
                         secondNumberIndex = displayed5.length() + 1;
                         break;
+
 
                     case R.id.clear:
                         resultTextView.setText("");
@@ -438,7 +523,6 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     case R.id.equal:
-
                         String displayedContent = resultTextView.getText().toString();
 
                         if(displayedContent.equals("")){        //If operator is entered without any number
@@ -466,11 +550,6 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
                                     initialize();
                                 } else if (operator == '÷') {
-                                    firstNumber /= secondNumber;
-                                    resultTextView.setText(String.valueOf(firstNumber));
-                                    Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
-                                    initialize();
-                                } else if (operator == '/') {
                                     firstNumber /= secondNumber;
                                     resultTextView.setText(String.valueOf(firstNumber));
                                     Toast.makeText(MainActivity.this, String.valueOf(firstNumber), Toast.LENGTH_SHORT).show();
