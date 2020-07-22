@@ -158,15 +158,30 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     case R.id.dot:
+                        String displayed_dot = resultTextView.getText().toString();
                         if(flag == 1){
                             resultTextView.setText("");
                             resultTextView.append(".");
                             flag=0;
                             break;
                         }
+                        else if (displayed_dot.contains("+") || displayed_dot.contains("-") || displayed_dot.contains("×") || displayed_dot.contains("÷") || displayed_dot.isEmpty()){
+                            int count_dot = 0;
+                            for(char c : displayed_dot.toCharArray()){
+                                if(c == '.'){
+                                    count_dot++;
+                                }
+                            }
+                            if(count_dot > 1){
+                                return;
+                            }
+                            else{
+                                resultTextView.append(".");
+                                break;
+                            }
+                        }
                         else {
-                            resultTextView.append(".");
-                            break;
+                            return;
                         }
 
                     case R.id.addition:
@@ -183,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
                                     secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
                                 }
                                 catch (Exception ignored){
+                                    return;
                                 }
                                 firstNumber+= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
@@ -195,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                                     secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
                                 }
                                 catch (Exception ignored){
+                                    return;
                                 }
                                 firstNumber-= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
@@ -220,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
                                     secondNumber = Double.parseDouble(displayed1.substring(secondNumberIndex, size1));
                                 }
                                 catch (Exception ignored){
+                                    return;
                                 }
                                 firstNumber/= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
@@ -250,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber+= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -262,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -274,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -286,6 +307,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed2.substring(secondNumberIndex, size2));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -312,16 +334,14 @@ public class MainActivity extends AppCompatActivity {
                             operator=' ';
                             int size3 = displayed3.length();
                             try {
-                                Log.d("lol","q1");
                                 secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
-                                Log.d("lol","q2");
                                 firstNumber+= secondNumber;
                                 resultTextView.setText(String.valueOf(firstNumber));
                                 displayed3 = resultTextView.getText().toString();
                             }
                             catch (Exception e){
+                                return;
                             }
-                            Log.d("lol","log1");
                         }
                         else if(displayed3.contains("-")){
                             operator=' ';
@@ -330,6 +350,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -342,6 +363,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -354,6 +376,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed3.substring(secondNumberIndex, size3));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -364,7 +387,6 @@ public class MainActivity extends AppCompatActivity {
                             firstNumber = Double.parseDouble(displayed3);
 
                         }
-                        Log.d("lol","log2");
                         operator = '×';
                         resultTextView.append("×");
                         secondNumberIndex = displayed3.length() + 1;
@@ -385,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber+= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -397,6 +420,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -409,6 +433,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -421,6 +446,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed4.substring(secondNumberIndex, size4));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -452,6 +478,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber+= secondNumber;
                             secondNumber=100;
@@ -465,6 +492,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber-= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -477,6 +505,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber*= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -489,6 +518,7 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber = Double.parseDouble(displayed5.substring(secondNumberIndex, size5));
                             }
                             catch (Exception ignored){
+                                return;
                             }
                             firstNumber/= secondNumber;
                             resultTextView.setText(String.valueOf(firstNumber));
@@ -530,12 +560,17 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.equal:
                         String displayedContent = resultTextView.getText().toString();
 
-                        if(displayedContent.equals("")){        //If operator is entered without any number
+                        if(displayedContent.equals("")){        //In case of no input
                             return;
                         }
                         else {
                             int size = displayedContent.length();
-                            secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex, size));
+                            try {
+                                secondNumber = Double.parseDouble(displayedContent.substring(secondNumberIndex, size));
+                            }
+                            catch (Exception ignored){
+                                return;
+                            }
 
                             if (status) {
                                 flag = 1;
