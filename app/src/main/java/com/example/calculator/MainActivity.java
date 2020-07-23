@@ -165,7 +165,11 @@ public class MainActivity extends AppCompatActivity {
                             flag=0;
                             break;
                         }
-                        else if (displayed_dot.contains("+") || displayed_dot.contains("-") || displayed_dot.contains("×") || displayed_dot.contains("÷") || displayed_dot.isEmpty()){
+                        else if(!displayed_dot.contains(".")){
+                            resultTextView.append(".");
+                            break;
+                        }
+                        else if (displayed_dot.contains("+") || displayed_dot.contains("-") || displayed_dot.contains("×") || displayed_dot.contains("÷")){
                             int count_dot = 0;
                             for(char c : displayed_dot.toCharArray()){
                                 if(c == '.'){
@@ -246,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 status = true;
                                 firstNumber = Double.parseDouble(displayed1);
-
                             }
                         operator = '+';
                         resultTextView.append("+");

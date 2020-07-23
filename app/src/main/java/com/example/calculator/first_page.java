@@ -28,6 +28,6 @@ public class first_page extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        },500);
+        },1000);
     }
 }
