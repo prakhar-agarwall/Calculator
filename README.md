@@ -18,6 +18,15 @@ Download apk file here [Calculator](https://github.com/prakhar-agarwall/Source/r
  
  ---
  
+ ### Screen Recording
+<table>
+  <tbody>
+    <td><img src = "https://github.com/prakhar-agarwall/Source/raw/master/Calculator/Calculator.gif" width="250" height="500"></td>
+  </tbody>
+ </table>
+ 
+ ---
+ 
  Peace✌
 
 
