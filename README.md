@@ -27,6 +27,6 @@ Download apk file here [Calculator](https://github.com/prakhar-agarwall/Source/r
  
  ---
  
- Peace✌
+ Peace Out✌
 
 
